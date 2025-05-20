@@ -1,0 +1,49 @@
+.article-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  padding: 130px;
+  color: inherit;
+  width: 500px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.article-card:hover {
+  transform: scale(1.02);
+}
+
+.article-card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.author {
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+.vote {
+  font-size: 0.85rem;
+}
+.date {
+  font-size: 0.85rem;
+  color: #333;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.topic {
+  background-color: #dacd7c;
+  border-radius: 12px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  align-self: flex-start;
+}
