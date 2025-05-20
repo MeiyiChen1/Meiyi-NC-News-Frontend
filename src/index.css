@@ -28,6 +28,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: rgba(15, 30, 35, 0.438);
 }
 
 h1 {
@@ -63,6 +64,6 @@ button:focus-visible {
     color: #747bff;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: #ffffff;
   }
 }

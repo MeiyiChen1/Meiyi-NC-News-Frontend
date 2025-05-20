@@ -1,0 +1,28 @@
+.app-header {
+  position: sticky;
+  top: 0;
+  background: rgb(174, 175, 151);
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(213, 210, 210, 0.1);
+  z-index: 100;
+}
+
+.app-header nav {
+  display: flex;
+  gap: 4rem;
+}
+
+.app-header a {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: large;
+  color: #fcffde;
+  font-weight: bold;
+}
+
+.app-header a:hover {
+  color: #4997e4;
+}
