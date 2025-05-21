@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ArticleCard from "../components/ArticleCard";
 import api from "../api";
+import "./Articles.css";
 
 export default function Articles() {
   const [articles, setArticles] = useState([]);
@@ -8,11 +9,9 @@ export default function Articles() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    console.log("Articles component mounted");
     api
       .get("/articles")
       .then((response) => {
-        console.log("API response:", response);
         setArticles(response.data.articles);
         setLoading(false);
       })
