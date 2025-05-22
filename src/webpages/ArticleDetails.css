@@ -27,3 +27,11 @@
   margin: 8px 0;
   color: #444;
 }
+.back-button {
+  position: relative;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  padding: 6px 12px;
+  font-size: 14px;
+  text-align: left;
+}
