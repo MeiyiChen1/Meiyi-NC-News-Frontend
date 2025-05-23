@@ -88,6 +88,16 @@ export default function ArticleDetails() {
     (inc) => api.patch(`/articles/${article_id}`, { inc_votes: inc }),
     "Failed to vote the current article"
   );
+  const handleDelete = (commentId) => {
+    const previous = [...comments];
+    setComments((prev) =>
+      prev.filter((comment) => comment.comment_id !== commentId)
+    );
+    return api.delete(`/comments/${commentId}`).catch((error) => {
+      setComments(previous);
+      throw error;
+    });
+  };
 
   if (articleLoading || !article) return <p>Loading article...</p>;
   if (error) return <p className="error">Error: {error}</p>;
@@ -135,7 +145,11 @@ export default function ArticleDetails() {
       </div>
       <div className="comments-container">
         {comments.map((comment) => (
-          <CommentCard key={comment.comment_id} comment={comment} />
+          <CommentCard
+            key={comment.comment_id}
+            comment={comment}
+            onDelete={handleDelete}
+          />
         ))}
       </div>
     </div>
