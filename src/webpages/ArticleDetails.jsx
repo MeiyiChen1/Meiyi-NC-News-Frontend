@@ -13,6 +13,11 @@ export default function ArticleDetails() {
   const [error, setError] = useState(null);
   const [comments, setComments] = useState([]);
   const navigate = useNavigate();
+  const [newComment, setNewComment] = useState("");
+  const [postingComment, setPostingComment] = useState(false);
+  const [successPosted, setSuccessPosted] = useState(false);
+  const [commentError, setCommentError] = useState("");
+
   useEffect(() => {
     api
       .get(`/articles/${article_id}`)
@@ -38,6 +43,45 @@ export default function ArticleDetails() {
         setCommentsLoading(false);
       });
   }, [article_id]);
+
+  const handleInputChange = (e) => {
+    setNewComment(e.target.value);
+    if (e.target.value.trim() !== "") {
+      setCommentError("");
+    }
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!newComment.trim()) {
+      setCommentError("Comment can't be empty");
+      return;
+    }
+    setPostingComment(true);
+    setError(null);
+    setSuccessPosted(false);
+
+    const commentSend = {
+      username: "grumpy19",
+      body: newComment.trim(),
+    };
+    api
+      .post(`/articles/${article_id}/comments`, commentSend)
+      .then((response) => {
+        setComments((prev) => [
+          { ...response.data.comment, author: response.data.comment.username },
+          ...prev,
+        ]);
+        setNewComment("");
+        setSuccessPosted(true);
+        setCommentError("");
+      })
+      .catch(() => {
+        setError("Failed to post new comment, please try again later");
+      })
+      .finally(() => {
+        setPostingComment(false);
+      });
+  };
 
   const [articleVotes, voteArticle] = useVote(
     article?.votes || 0,
@@ -73,6 +117,22 @@ export default function ArticleDetails() {
         {new Date(article.created_at).toLocaleString()}
       </p>
       <h3>Comments</h3>
+      <div className="new-comment">
+        <form onSubmit={handleSubmit} className="comment-form">
+          <textarea
+            value={newComment}
+            onChange={handleInputChange}
+            placeholder="Your comment here..."
+            rows={3}
+          />
+          <button type="submit" disabled={postingComment || !!commentError}>
+            {postingComment ? "posting now..." : "post comment"}
+          </button>
+          {commentError && <p className="error-msg">{commentError}</p>}
+          {error && <p className="error-msg">Error: {error}</p>}
+          {successPosted && <p className="success">Comment posted :)</p>}
+        </form>
+      </div>
       <div className="comments-container">
         {comments.map((comment) => (
           <CommentCard key={comment.comment_id} comment={comment} />
