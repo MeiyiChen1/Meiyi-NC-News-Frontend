@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import heroImg from "../assets/hero.jpg";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -7,8 +8,8 @@ export default function Home() {
       <div className="image-container">
         <img
           className="heroImage"
-          src="src/assets/hero.jpg"
-          alt="image of high street with text introduce the news type in the website"
+          src={heroImg}
+          alt="image of news being printing"
         />
       </div>
 
