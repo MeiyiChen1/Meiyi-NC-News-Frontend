@@ -1,12 +1,88 @@
-# React + Vite
+# NC News – A Social News Aggregator (Frontend)
+### A interactive comment style News web app built with React, interacting with a custom NC News API (Node.js/Express/PostgreSQL).
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 **[Live Demo](https://meiyi-nc-news.netlify.app)**
 
-Currently, two official plugins are available:
+### **Features**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+✔ CRUD Operations
 
-## Expanding the ESLint configuration
+- Browse articles by topic, sort by votes/date.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- View article details with nested comments.
+
+- Upvote/downvote articles (optimistic UI updates).
+
+- Post/delete comments (hardcoded user).
+
+✔ User Experience
+
+- Accessible routing (React Router).
+
+- Error handling (404, API failure fallbacks).
+
+✔ Testing
+
+- 50+ unit/integration tests (Jest + React Testing Library).
+
+- End-to-end test coverage for critical flows.
+
+### **Tech Stack**
+
+**Frontend**: React | Axios | React Router | Context API (state) | CSS3
+
+**Testing**: Jest | React Testing Library
+
+**Deployment**: Netlify (CI/CD)
+
+**API**: NC News Backend (Node.js/Express/PostgreSQL)
+
+### **Project Planning**
+A structured approach ensured efficiency:
+
+- Avaliable endpoints summary from Backend Api
+
+- Wireframes – Designed all views (homepage, article, comments).
+
+- Component Tree – Mapped data flow (props/state) and API calls.
+
+- UX Considerations – Prioritized accessibility and fluid interactions.
+
+📁 **[View my project planning docs](/planning)**
+
+### **Setup steps**
+
+**1. check Prerequisites**:
+
+Node.js v18+ (check with node -v)
+
+npm (comes with Node)
+
+**2. Clone this repo**:
+
+git clone https://github.com/MeiyiChen1/Meiyi-NC-News-Frontend.git
+cd into the repo
+
+**3. Install dependencies**:
+
+npm install
+
+**4. Configure Environment Variables**:
+
+Create a .env file in the root directory:
+
+**5. Run the Development Server**
+
+npm run dev
+
+**For Testing**
+
+Run unit tests:
+npm test
+
+
+### **Future Improvements**
+
+Add user authentication (OAuth).
+
+Implement real-time updates (WebSockets).
