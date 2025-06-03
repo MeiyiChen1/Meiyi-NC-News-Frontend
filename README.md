@@ -1,4 +1,4 @@
-# NC News – A Social News Aggregator (Frontend)
+# Meiyi NC News – (Frontend)
 ### A interactive comment style News web app built with React, interacting with a custom NC News API (Node.js/Express/PostgreSQL).
 
 🚀 **[Live Demo](https://meiyi-nc-news.netlify.app)**
