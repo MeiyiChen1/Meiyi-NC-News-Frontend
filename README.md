@@ -71,11 +71,6 @@ npm install
 
 npm run dev
 
-**For Testing**
-
-Run unit tests:
-npm test
-
 
 ### **Future Improvements**
 
