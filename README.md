@@ -67,11 +67,7 @@ cd into the repo
 
 npm install
 
-**4. Configure Environment Variables**:
-
-Create a .env file in the root directory:
-
-**5. Run the Development Server**
+**4. Run the Development Server**
 
 npm run dev
 
