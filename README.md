@@ -5,6 +5,16 @@
 
 ### **Features**
 
+✔ Planning
+
+Planned and executed a full CRUD React application from wireframes to deployment, following a structured planning phase to define:
+
+- Wireframes for all routes (homepage, article view, comments).
+
+- Component tree with data flow (props vs. state) and API integration strategy.
+
+- User context (hardcoded authenticated user) for seamless comment/delete functionality.
+
 ✔ CRUD Operations
 
 - Browse articles by topic, sort by votes/date.
@@ -26,6 +36,19 @@
 - 50+ unit/integration tests (Jest + React Testing Library).
 
 - End-to-end test coverage for critical flows.
+
+✔ Delivered core features aligned with Agile principles:
+
+- The articles page with the article card included key information for each article
+
+- Article detail pages with comments and real-time voting (PATCH)
+
+- User interactions: Post/delete comments (POST/DELETE), vote on articles (optimistic UI updates)
+
+- Error handling: 404 pages, API failure fallbacks, and input validation
+
+- Deployed on Netlify with CI/CD, ensuring automated testing and live accessibility
+
 
 ### **Tech Stack**
 
